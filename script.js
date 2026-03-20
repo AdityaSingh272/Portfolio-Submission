@@ -15,18 +15,23 @@
     });
   }
 
+  let scrollTicking = false;
   function onScroll() {
     if (isClickScrolling) return;
+    if (scrollTicking) return;
+    scrollTicking = true;
 
-    let currentId = "";
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2) {
-        currentId = section.getAttribute("id");
-      }
+    requestAnimationFrame(() => {
+      let currentId = "";
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2) {
+          currentId = section.getAttribute("id");
+        }
+      });
+      if (currentId) setActive(currentId);
+      scrollTicking = false;
     });
-
-    if (currentId) setActive(currentId);
   }
 
   navLinks.forEach((link) => {
@@ -36,12 +41,10 @@
       if (!target) return;
 
       e.preventDefault();
-
       setActive(targetId);
 
       isClickScrolling = true;
       clearTimeout(clickScrollTimeout);
-
       target.scrollIntoView({ behavior: "smooth" });
 
       clickScrollTimeout = setTimeout(() => {
@@ -50,7 +53,7 @@
     });
   });
 
-  window.addEventListener("scroll", onScroll);
+  window.addEventListener("scroll", onScroll, { passive: true })
   onScroll();
 })();
 
@@ -60,6 +63,8 @@
   const terminal = document.querySelector(".terminal-window");
   if (!wrapper || !terminal) return;
 
+  if (window.matchMedia("(hover: none)").matches) return;
+
   const MAX_TILT = 10;
   const MAX_LIFT = 20;
   let targetX = 0, targetY = 0;
@@ -67,7 +72,6 @@
   let isHovering = false;
   let rafId;
 
-  terminal.style.willChange = "transform";
   terminal.style.transformStyle = "preserve-3d";
   wrapper.style.perspective = "900px";
 
@@ -94,6 +98,8 @@
 
     if (isHovering || Math.abs(currentX) > 0.01 || Math.abs(currentY) > 0.01) {
       rafId = requestAnimationFrame(animate);
+    } else {
+      terminal.style.willChange = "auto";
     }
   }
 
@@ -107,6 +113,7 @@
 
     if (!isHovering) {
       isHovering = true;
+      terminal.style.willChange = "transform";
       cancelAnimationFrame(rafId);
       animate();
     }
@@ -155,6 +162,7 @@
   const menu = document.getElementById('navMobileMenu');
   const icon = document.getElementById('hamburgerIcon');
   const mobileLinks = document.querySelectorAll('.nav-mobile-menu a');
+  const navLinks = document.querySelectorAll('nav ul a');
   if (!btn || !menu) return;
 
   let isOpen = false;
@@ -196,17 +204,22 @@
   });
 
   const sections = document.querySelectorAll('main section[id]');
+
+  let mobileTicking = false;
   window.addEventListener('scroll', () => {
-    let currentId = '';
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= 80) {
-        currentId = section.getAttribute('id');
+    if (mobileTicking) return;
+    mobileTicking = true;
+    requestAnimationFrame(() => {
+      let currentId = '';
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 80) currentId = section.getAttribute('id');
+      });
+      if (currentId) {
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + currentId));
+        mobileLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + currentId));
       }
+      mobileTicking = false;
     });
-    if (currentId) {
-      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + currentId));
-      mobileLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + currentId));
-    }
-  });
+  }, { passive: true });
 })();
