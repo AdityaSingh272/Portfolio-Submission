@@ -227,16 +227,19 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 1.5rem 2rem;
+  padding: 3rem 1.5rem 2rem;
   max-width: 80rem;
   margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  #home { padding-top: 1rem; }
 }
 
 .hero-grid {
   display: grid;
   gap: 3rem;
   align-items: center;
-  contain: layout;
 }
 
 @media (min-width: 1024px) {
@@ -950,7 +953,6 @@ footer {
   filter: blur(6px);
   transform: translateY(6px);
   transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
-  will-change: opacity, filter, transform;
 }
 
 .hero-role.fade-out {
