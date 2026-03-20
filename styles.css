@@ -227,7 +227,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem 1.5rem 2rem;
+  padding: 5rem 1.5rem 2rem;
   max-width: 80rem;
   margin: 0 auto;
 }
