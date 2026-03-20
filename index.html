@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Aditya Kumar Singh | Systems &amp; Full-stack Architect</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <div class="nav-logo">&lt;TERMINAL/&gt;</div>
+
+      <ul class="nav-links">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+        <span class="material-symbols-outlined" id="hamburgerIcon">terminal</span>
+      </button>
+    </nav>
+    <!-- Mobile dropdown menu -->
+    <div class="nav-mobile-menu" id="navMobileMenu">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="home">
+      <div class="hero-grid">
+
+        <div>
+          <div class="status-badge">
+            <span class="status-dot animate-pulse"></span>
+            Status: Available for hire
+          </div>
+
+          <div>
+            <h1 class="hero-name-primary">Aditya</h1>
+            <h2 class="hero-name-secondary">Kumar Singh</h2>
+          </div>
+
+          <p class="hero-tagline">
+            I'm a professional <span class="hero-role-wrapper"><span class="hero-role"
+                id="heroRole">Engineer</span></span>.<br />
+            dedicated to building high-performance, user-centric web applications.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn-primary" href="#projects">VIEW ARCHIVE</a>
+            <a class="btn-outline" href="#contact">GET IN TOUCH</a>
+          </div>
+        </div>
+
+        <div class="terminal-wrapper">
+          <div class="terminal-glow"></div>
+          <div class="terminal-window">
+
+            <div class="terminal-titlebar">
+              <div class="terminal-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+              </div>
+              <div class="terminal-filename">aditya-profile.cpp</div>
+            </div>
+
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="line-num">01</span>
+                <span><span class="syntax-keyword">#include</span> <span
+                    class="syntax-string">&lt;iostream&gt;</span></span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">02</span>
+                <span><span class="syntax-keyword">const</span> <span class="syntax-keyword">char</span>* <span
+                    class="syntax-function">stack</span>[] = {<span class="syntax-string">"C++"</span>, <span
+                    class="syntax-string">"React"</span>, <span class="syntax-string">"Node"</span>};</span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">03</span>
+                <span><span class="syntax-keyword">struct</span> <span class="syntax-function">Engineer</span> {</span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">04</span>
+                <span class="pl-4">string name = <span class="syntax-string">'Aditya Kumar Singh'</span>;</span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">05</span>
+                <span class="pl-4">focus = [<span class="syntax-string">'Systems'</span>, <span
+                    class="syntax-string">'Full-stack'</span>];</span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">06</span>
+                <span class="pl-4">motto = <span class="syntax-string">'Optimizing the critical path'</span>;</span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">07</span>
+                <span>};</span>
+              </div>
+              <div class="terminal-line mt">
+                <span class="line-num">08</span>
+                <span class="syntax-comment">// Build: Success (O3 optimization)</span>
+              </div>
+              <div class="terminal-line">
+                <span class="line-num">09</span>
+                <span class="terminal-prompt">aditya@syntax:~$ <span class="cursor animate-pulse"></span></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <p class="section-label text-primary">01. Selected Works</p>
+            <h3 class="section-title">Production Artifacts</h3>
+          </div>
+          <p class="section-subtitle">
+            Bridging high-performance systems with modern web architecture.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <img alt="Complex wireframe geometry and code"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVoKWJUbd-Nurf3CB_I_PJSkji7tODMbQtPl4oP6GXLjIDF5v4CUWDy3jpLIwkyOLVwwW2e9BQ2yNn1xrpJyigABa7_QdYgklT8nl6qMgn7kEB0VHZ3343YHNvoUdHPikQqhXe6SwdXJ5n2aUYqtBr9jaAHnsq-SVcBGPNuocuLKlmwHDIxA74l2Mg1C9zt3lS8_qp-PmeuzjOJvZcCeoq2H_QEW2KYx_n88V1xPrZeHD_J1hHEGtpQnr5Gd10dJPB_yyINtiYL0w" />
+              <div class="project-img-overlay overlay-primary"></div>
+            </div>
+            <div class="project-body">
+              <div class="tags">
+                <span class="tag tag-primary">C++</span>
+                <span class="tag tag-secondary">OpenGL</span>
+              </div>
+              <h4 class="project-title">High-Performance Engine</h4>
+              <p class="project-desc">
+                A custom rendering engine built from scratch, focusing on efficient memory management and real-time
+                shader processing.
+              </p>
+              <div class="project-link">
+                <span class="material-symbols-outlined text-primary">arrow_outward</span>
+                <span class="project-link-label link-primary">Core Repository</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <img alt="E-commerce mobile and desktop interface mockup"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPmsysKHkApyED9ErQVbZnCaXOY9kvluF6b_FNPrkabLPXMi2op1mhGmUamH8NDLHjXdvVf1de6CPDfgyXN453rSMjTJ0WisgM59m_i11kqPI8spNinOYgp-HvpklyRvcUBDU78QE61Eftht4MHicNTlJEcH91RvjNogIMHXezpTLuUji9-oA-3mYhty3sRBbxuejeKeINRM3qXGyZWNinKrt3n-sNQVg8zFHdNQZIrPu5h4BGe8X3NXNnFYTKhxA2N1oqXJ76ujs" />
+              <div class="project-img-overlay overlay-secondary"></div>
+            </div>
+            <div class="project-body">
+              <div class="tags">
+                <span class="tag tag-secondary">Next.js</span>
+                <span class="tag tag-tertiary">PostgreSQL</span>
+              </div>
+              <h4 class="project-title">E-Commerce Nexus</h4>
+              <p class="project-desc">
+                A full-stack marketplace featuring server-side rendering, dynamic inventory sync, and secure payment
+                processing.
+              </p>
+              <div class="project-link">
+                <span class="material-symbols-outlined text-secondary">arrow_outward</span>
+                <span class="project-link-label link-secondary">Live Demo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img-wrap">
+              <img alt="Dark dashboard with moving line graphs"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWLwGpthzoiITiz4mZuG2P-ZVU0f7t-QMNZd4Awjc3zgeCwmAIDz_mg6SWIOKadVZSZajIUmLVAJ9dyFBGHJlhG9ZH35cQ1YL2ao85WDVDbYr0RlzHBUSAyFpVtzGvPncFlso-PwPwymTgwAw-th2P5thE6ZyDU5M8E0dddOkzzwnfMPmLcNit18S74JkmTKZNsBo1YCyABKUi1gySE1JAHYIM8kGsYxUEG9mEDNdHJSOMM0xVn28XqBvdjPojazHTiKt6gXIA2Q" />
+              <div class="project-img-overlay overlay-tertiary"></div>
+            </div>
+            <div class="project-body">
+              <div class="tags">
+                <span class="tag tag-tertiary">C++ / WebSockets</span>
+                <span class="tag tag-primary">React</span>
+              </div>
+              <h4 class="project-title">Real-time Analytics Dashboard</h4>
+              <p class="project-desc">
+                Hybrid architecture blending a high-throughput C++ data processing backend with a responsive React
+                frontend via WebSockets.
+              </p>
+              <div class="project-link">
+                <span class="material-symbols-outlined text-tertiary">arrow_outward</span>
+                <span class="project-link-label link-tertiary">Architecture Specs</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="skills-grid">
+
+        <div class="skills-intro">
+          <p class="section-label text-tertiary">02. Capabilities</p>
+          <h3 class="section-title" style="margin-bottom:2rem;">Technical Stack</h3>
+          <p>
+            Mastering the spectrum from low-level memory control to scalable cloud-native web environments.
+          </p>
+
+          <div class="skill-categories">
+            <div>
+              <div class="skill-category-heading text-primary">
+                <span class="material-symbols-outlined">settings_suggest</span>
+                <h4>System Architecture</h4>
+              </div>
+              <ul class="skill-list">
+                <li><span class="skill-dot dot-primary"></span> C++ / STL</li>
+                <li><span class="skill-dot dot-primary"></span> Multi-threading</li>
+                <li><span class="skill-dot dot-primary"></span> Memory Management</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="skill-category-heading text-secondary">
+                <span class="material-symbols-outlined">web</span>
+                <h4>Web Ecosystem</h4>
+              </div>
+              <ul class="skill-list">
+                <li><span class="skill-dot dot-secondary"></span> React / Next.js</li>
+                <li><span class="skill-dot dot-secondary"></span> Node.js / GraphQL</li>
+                <li><span class="skill-dot dot-secondary"></span> Tailwind CSS</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="devops-section">
+            <div class="skill-category-heading text-tertiary">
+              <span class="material-symbols-outlined">terminal</span>
+              <h4>Database &amp; DevOps</h4>
+            </div>
+            <ul class="devops-list">
+              <li><span class="skill-dot dot-tertiary"></span> PostgreSQL / Redis</li>
+              <li><span class="skill-dot dot-tertiary"></span> Docker / CI/CD</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skills-bento">
+
+          <div class="skill-card skill-card-wide">
+            <span class="material-symbols-outlined skill-card-icon-lg text-primary"
+              style="font-variation-settings:'FILL' 1;">developer_board</span>
+            <div>
+              <div class="skill-card-title">Embedded Logic</div>
+              <div class="skill-card-subtitle">Hardware-Software Interop</div>
+            </div>
+          </div>
+
+          <div class="skill-card skill-card-small">
+            <span class="material-symbols-outlined skill-card-icon text-tertiary">database</span>
+            <div class="skill-card-sm-title">SQL Tuning</div>
+          </div>
+
+          <div class="skill-card skill-card-small">
+            <span class="material-symbols-outlined skill-card-icon text-secondary">memory</span>
+            <div class="skill-card-sm-title">Optimization</div>
+          </div>
+
+          <div class="skill-focus-card">
+            <div class="bg-icon">
+              <span class="material-symbols-outlined"
+                style="font-size:3.5rem; font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 48; width:3.5rem; height:3.5rem;">architecture</span>
+            </div>
+            <div class="content">
+              <div class="focus-label">Focus Point</div>
+              <div class="focus-title">Scalable Systems Architecture &amp; High-Concurrency Design</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-inner">
+        <p class="contact-label">03. Transmission</p>
+        <h3 class="contact-title">Initiate Contact</h3>
+        <p class="contact-desc">
+          Ready to synchronize for your next critical system or platform. Let's build something performant.
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=adityasingh27022005@gmail.com"
+            target="_blank" rel="noopener noreferrer">
+            <div class="contact-card-inner">
+              <span class="material-symbols-outlined text-primary">mail</span>
+              <div class="contact-card-text">
+                <div class="contact-card-label">Email</div>
+                <div class="contact-card-value">adityasingh27022005@gmail.com</div>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-primary contact-arrow">arrow_forward</span>
+          </a>
+
+          <a class="contact-card secondary" href="https://www.linkedin.com/in/aditya-kumar-singh-252a7939b/"
+            target="_blank" rel="noopener noreferrer">
+            <div class="contact-card-inner">
+              <span class="material-symbols-outlined text-secondary">hub</span>
+              <div class="contact-card-text">
+                <div class="contact-card-label">Network</div>
+                <div class="contact-card-value">LinkedIn</div>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-secondary contact-arrow">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">&lt;ADITYA_KUMAR_SINGH/&gt;</div>
+      <div class="footer-copy">© 2026 ADITYA KUMAR SINGH. DEPLOYED VIA GITHUB.</div>
+      <div class="footer-links">
+        <a class="highlight" href="https://github.com/AdityaSingh272" target="_blank"
+          rel="noopener noreferrer">GitHub</a>
+        <a class="muted" href="https://www.linkedin.com/in/aditya-kumar-singh-252a7939b/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
