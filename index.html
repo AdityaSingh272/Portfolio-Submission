@@ -17,6 +17,50 @@
 
 <body>
 
+  <div id="bootScreen">
+    <div class="boot-content">
+      <div class="boot-logo">&lt;AKS/&gt;</div>
+      <div class="boot-lines" id="bootLines"></div>
+      <div class="boot-bar-wrap">
+        <div class="boot-bar" id="bootBar"></div>
+      </div>
+      <div class="boot-status" id="bootStatus">INITIALIZING...</div>
+    </div>
+  </div>
+
+  <div id="cursorDot"></div>
+  <div id="cursorRing"></div>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <div id="easterEgg" class="easter-egg-overlay">
+    <div class="easter-egg-panel">
+      <div class="ee-titlebar">
+        <div class="terminal-dots">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <span class="ee-title">aditya@syntax:~ — bash</span>
+        <button class="ee-close" id="eeClose">✕</button>
+      </div>
+      <div class="ee-body" id="eeBody">
+        <div class="ee-output" id="eeOutput">
+          <p class="ee-welcome">Welcome to Aditya's Terminal v2.0.26</p>
+          <p class="ee-hint">Type <span class="ee-cmd">help</span> for available commands.</p>
+        </div>
+        <div class="ee-input-row">
+          <span class="ee-prompt">aditya@syntax:~$</span>
+          <input type="text" class="ee-input" id="eeInput" autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+    <span class="material-symbols-outlined" id="themeIcon">light_mode</span>
+  </button>
+
   <header>
     <nav>
       <div class="nav-logo">&lt;TERMINAL/&gt;</div>
@@ -32,7 +76,6 @@
         <span class="material-symbols-outlined" id="hamburgerIcon">terminal</span>
       </button>
     </nav>
-    <!-- Mobile dropdown menu -->
     <div class="nav-mobile-menu" id="navMobileMenu">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
@@ -46,14 +89,14 @@
     <section id="home">
       <div class="hero-grid">
 
-        <div>
+        <div class="hero-text-col" data-reveal>
           <div class="status-badge">
             <span class="status-dot animate-pulse"></span>
             Status: Available for hire
           </div>
 
           <div>
-            <h1 class="hero-name-primary">Aditya</h1>
+            <h1 class="hero-name-primary glitch-text" data-text="Aditya">Aditya</h1>
             <h2 class="hero-name-secondary">Kumar Singh</h2>
           </div>
 
@@ -66,10 +109,47 @@
           <div class="hero-cta">
             <a class="btn-primary" href="#projects">VIEW ARCHIVE</a>
             <a class="btn-outline" href="#contact">GET IN TOUCH</a>
+            <a class="btn-resume-hero" href="#" download>
+              <span class="material-symbols-outlined">download</span>
+              Download CV
+            </a>
           </div>
+
+          <div class="github-stats" id="githubStats">
+            <div class="gh-stat">
+              <span class="gh-stat-val" id="ghRepos">—</span>
+              <span class="gh-stat-label">Repos</span>
+            </div>
+            <div class="gh-stat-divider"></div>
+            <div class="gh-stat">
+              <span class="gh-stat-val" id="ghFollowers">—</span>
+              <span class="gh-stat-label">Followers</span>
+            </div>
+            <div class="gh-stat-divider"></div>
+            <div class="gh-stat">
+              <span class="gh-stat-val" id="ghFollowing">—</span>
+              <span class="gh-stat-label">Following</span>
+            </div>
+            <div class="gh-stat-divider"></div>
+            <a class="gh-stat gh-link" href="https://github.com/AdityaSingh272" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined" style="font-size:1rem;">open_in_new</span>
+              <span class="gh-stat-label">GitHub</span>
+            </a>
+          </div>
+
+          <button class="terminal-hint" id="terminalHint" type="button">
+            <span class="terminal-hint-desktop">
+              <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:middle;">keyboard</span>
+              Press <kbd style="font-family:monospace;">`</kbd> to open terminal
+            </span>
+            <span class="terminal-hint-mobile">
+              <span class="material-symbols-outlined" style="font-size:0.85rem;vertical-align:middle;">terminal</span>
+              Tap to open terminal
+            </span>
+          </button>
         </div>
 
-        <div class="terminal-wrapper">
+        <div class="terminal-wrapper" data-reveal>
           <div class="terminal-glow"></div>
           <div class="terminal-window">
 
@@ -117,7 +197,6 @@
               </div>
               <div class="terminal-line mt">
                 <span class="line-num">08</span>
-                <span class="syntax-comment">// Build: Success (O3 optimization)</span>
               </div>
               <div class="terminal-line">
                 <span class="line-num">09</span>
@@ -134,7 +213,7 @@
     <section id="projects">
       <div class="container">
 
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <div>
             <p class="section-label text-primary">01. Selected Works</p>
             <h3 class="section-title">Production Artifacts</h3>
@@ -146,7 +225,7 @@
 
         <div class="projects-grid">
 
-          <div class="project-card">
+          <div class="project-card" data-reveal>
             <div class="project-img-wrap">
               <img alt="Complex wireframe geometry and code"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVoKWJUbd-Nurf3CB_I_PJSkji7tODMbQtPl4oP6GXLjIDF5v4CUWDy3jpLIwkyOLVwwW2e9BQ2yNn1xrpJyigABa7_QdYgklT8nl6qMgn7kEB0VHZ3343YHNvoUdHPikQqhXe6SwdXJ5n2aUYqtBr9jaAHnsq-SVcBGPNuocuLKlmwHDIxA74l2Mg1C9zt3lS8_qp-PmeuzjOJvZcCeoq2H_QEW2KYx_n88V1xPrZeHD_J1hHEGtpQnr5Gd10dJPB_yyINtiYL0w" />
@@ -169,7 +248,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-reveal>
             <div class="project-img-wrap">
               <img alt="E-commerce mobile and desktop interface mockup"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPmsysKHkApyED9ErQVbZnCaXOY9kvluF6b_FNPrkabLPXMi2op1mhGmUamH8NDLHjXdvVf1de6CPDfgyXN453rSMjTJ0WisgM59m_i11kqPI8spNinOYgp-HvpklyRvcUBDU78QE61Eftht4MHicNTlJEcH91RvjNogIMHXezpTLuUji9-oA-3mYhty3sRBbxuejeKeINRM3qXGyZWNinKrt3n-sNQVg8zFHdNQZIrPu5h4BGe8X3NXNnFYTKhxA2N1oqXJ76ujs" />
@@ -192,7 +271,7 @@
             </div>
           </div>
 
-          <div class="project-card">
+          <div class="project-card" data-reveal>
             <div class="project-img-wrap">
               <img alt="Dark dashboard with moving line graphs"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeWLwGpthzoiITiz4mZuG2P-ZVU0f7t-QMNZd4Awjc3zgeCwmAIDz_mg6SWIOKadVZSZajIUmLVAJ9dyFBGHJlhG9ZH35cQ1YL2ao85WDVDbYr0RlzHBUSAyFpVtzGvPncFlso-PwPwymTgwAw-th2P5thE6ZyDU5M8E0dddOkzzwnfMPmLcNit18S74JkmTKZNsBo1YCyABKUi1gySE1JAHYIM8kGsYxUEG9mEDNdHJSOMM0xVn28XqBvdjPojazHTiKt6gXIA2Q" />
@@ -222,7 +301,7 @@
     <section id="skills">
       <div class="skills-grid">
 
-        <div class="skills-intro">
+        <div class="skills-intro" data-reveal>
           <p class="section-label text-tertiary">02. Capabilities</p>
           <h3 class="section-title" style="margin-bottom:2rem;">Technical Stack</h3>
           <p>
@@ -267,7 +346,7 @@
           </div>
         </div>
 
-        <div class="skills-bento">
+        <div class="skills-bento" data-reveal>
 
           <div class="skill-card skill-card-wide">
             <span class="material-symbols-outlined skill-card-icon-lg text-primary"
@@ -304,7 +383,7 @@
     </section>
 
     <section id="contact">
-      <div class="contact-inner">
+      <div class="contact-inner" data-reveal>
         <p class="contact-label">03. Transmission</p>
         <h3 class="contact-title">Initiate Contact</h3>
         <p class="contact-desc">
@@ -318,7 +397,7 @@
               <span class="material-symbols-outlined text-primary">mail</span>
               <div class="contact-card-text">
                 <div class="contact-card-label">Email</div>
-                <div class="contact-card-value">adityasingh27022005@gmail.com</div>
+                <div class="contact-card-value">adityasingh27022005<wbr>@gmail.com</div>
               </div>
             </div>
             <span class="material-symbols-outlined text-primary contact-arrow">arrow_forward</span>
@@ -336,6 +415,36 @@
             <span class="material-symbols-outlined text-secondary contact-arrow">arrow_forward</span>
           </a>
         </div>
+
+        <div class="contact-form-wrap" data-reveal>
+          <div class="contact-form-header">
+            <span class="material-symbols-outlined text-primary">send</span>
+            <span>Or send a direct message</span>
+          </div>
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeyjrlp" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cfName">Name</label>
+                <input type="text" id="cfName" name="name" placeholder="Your name" required autocomplete="off" />
+              </div>
+              <div class="form-group">
+                <label for="cfEmail">Email</label>
+                <input type="email" id="cfEmail" name="email" placeholder="your@email.com" required
+                  autocomplete="off" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cfMsg">Message</label>
+              <textarea id="cfMsg" name="message" rows="4" placeholder="What are we building?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit" id="formSubmitBtn">
+              <span class="material-symbols-outlined">rocket_launch</span>
+              <span id="formBtnText">TRANSMIT MESSAGE</span>
+            </button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
+        </div>
+
       </div>
     </section>
 
@@ -356,3 +465,5 @@
 
   <script src="script.js" defer></script>
 </body>
+
+</html>
